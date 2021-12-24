@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Fibonacci Series</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body
+    style="
+      background-color: #0b0c10;
+      color: white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+      font-size: large;
+    "
+  >
+    <script>
+      function calculateFibo() {
+        var elem = document.getElementById("fibonacci_input").value;
+        let n1 = 0,
+          n2 = 1,
+          nextTerm,
+          arr = [];
+
+        for (let i = 1; i <= elem; i++) {
+          arr.push(n1);
+          nextTerm = n1 + n2;
+          n1 = n2;
+          n2 = nextTerm;
+        }
+
+        document.getElementById(
+          "title"
+        ).innerHTML = `Fibonacci Series of ${elem} are:`;
+        document.getElementById("output").innerHTML = arr;
+      }
+    </script>
+    <div
+      style="
+        height: 5em;
+        background-color: #66fcf1;
+
+        text-align: center;
+        font-size: large;
+        color: #0b0c10;
+      "
+    >
+      <h3 style="padding: 1em">FIBONACCI SERIES</h3>
+    </div>
+    <br />
+    <br />
+    <div style="text-align: center; border: 3px solid #1f2833; padding: 2em">
+      <input
+        id="fibonacci_input"
+        class="form-control"
+        type="number"
+        placeholder="Enter the digit to get fibonacci series"
+      />
+      <br />
+      <button
+        id="submit_number"
+        class="btn btn-info"
+        type="submit"
+        onclick="calculateFibo()"
+      >
+        Submit
+      </button>
+
+      <h3 id="title"></h3>
+      <p id="output" style="word-break: break-all !important"></p>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div
+      style="
+        height: 10em;
+        background-color: #66fcf1;
+
+        text-align: center;
+        font-size: large;
+        color: #0b0c10;
+        padding: 4em;
+      "
+    >
+      <a href="https://github.com/syedhannan" style="color: black">Github</a> |
+      <a href="https://www.linkedin.com/in/isyedhannan" style="color: black"
+        >LinkedIn</a
+      >
+      <h4>© Syed Abdul Hannan</h4>
+    </div>
+  </body>
+</html>
